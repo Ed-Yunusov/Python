@@ -1,1 +1,1 @@
-#  Автоматизация с помощью Python+Selenium. 
+#  Автоматизация с помощью Python+Selenium (PyCharm). 

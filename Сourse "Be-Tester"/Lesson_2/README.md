@@ -40,3 +40,31 @@ Save_btn= driver.find_element_by_css_selector('.oxd-button--secondary')
 Save_btn.click()
 driver.quit()
 ```
+3) Открыть страницу https://opensource-demo.orangehrmlive.com/ и написать тест для удаления пользователя.
+```py
+import time
+from selenium import webdriver
+driver = webdriver.Chrome(executable_path='C:/chromedriver.exe')
+driver.maximize_window()
+driver.get("https://opensource-demo.orangehrmlive.com/")
+time.sleep(3)
+login = driver.find_element_by_name("username")
+login.send_keys("Admin")
+password = driver.find_element_by_name("password")
+password.send_keys("admin123")
+login_btn = driver.find_element_by_css_selector(".oxd-button")
+login_btn.click()
+time.sleep(3)
+Employee_id = driver.find_element_by_css_selector("div:nth-child(2) > input")
+Employee_id.send_keys("0260")
+time.sleep(3)
+Search_btn = driver.find_element_by_css_selector(".orangehrm-left-space")
+Search_btn.click()
+time.sleep(3)
+Delete_btn = driver.find_element_by_css_selector(".bi-trash")
+Delete_btn.click()
+time.sleep(3)
+Yes_btn = driver.find_element_by_css_selector(".oxd-button--label-danger")
+Yes_btn.click()
+driver.quit()
+```
